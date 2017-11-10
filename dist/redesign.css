@@ -1,0 +1,367 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
+  display: block; }
+
+audio, canvas, video {
+  display: inline-block; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden] {
+  display: none; }
+
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+a:focus {
+  outline: thin dotted; }
+
+a:active, a:hover {
+  outline: 0; }
+
+h1 {
+  font-size: 2em; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b, strong {
+  font-weight: 700; }
+
+dfn {
+  font-style: italic; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+q {
+  quotes: \201C \201D \2018 \2019; }
+
+small {
+  font-size: 80%; }
+
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -.5em; }
+
+sub {
+  bottom: -.25em; }
+
+img {
+  border: 0;
+  max-width: 100%; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: .35em .625em .75em; }
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0; }
+
+button, input {
+  line-height: normal; }
+
+button, html input[type=button],
+input[type=reset], input[type=submit] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled], input[disabled] {
+  cursor: default; }
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  box-sizing: content-box; }
+
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body, figure {
+  margin: 0; }
+
+legend, button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  padding: 0;
+  margin: 0; }
+
+p, a, li {
+  line-height: 1.6; }
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* {
+  box-sizing: border-box; }
+
+html,
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0 13px; }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300; }
+
+p, li {
+  color: #333; }
+
+.devWrapper {
+  padding: 8% 0; }
+
+header {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 2% 0; }
+
+.fullButton {
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 0;
+  border: 0;
+  font-weight: 400;
+  font-size: 14px;
+  color: white;
+  background: #015249;
+  text-transform: uppercase;
+  font-family: "Work Sans", sans-serif;
+  transition: all 0.3s ease;
+  text-decoration: none; }
+  .fullButton:hover, .fullButton:focus {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
+
+.banner .devWrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  height: 85vh;
+  min-height: 400px;
+  padding: 0; }
+
+.leftBanner {
+  position: relative;
+  width: 45%;
+  height: 100%;
+  padding-left: 3%;
+  background: #015249;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  .leftBanner h1 {
+    position: relative;
+    color: white;
+    font-size: 60px;
+    text-align: right;
+    z-index: 2; }
+  .leftBanner:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 50%;
+    background: #015249;
+    -ms-transform: skew(-8deg);
+        transform: skew(-8deg);
+    top: 0;
+    right: -10%;
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.08);
+    z-index: 1; }
+
+.rightBanner {
+  position: relative;
+  width: 55%;
+  height: 100%;
+  background-image: url("http://rentofficespacetoronto.com/wp-content/uploads/2017/11/toronto-city-background.jpg");
+  background-size: cover;
+  background-position: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  padding: 0 5% 0 10%; }
+  .rightBanner:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(-45deg, #57bc90, #77c9d4);
+    opacity: 0.95; }
+  .rightBanner h2 {
+    position: relative;
+    color: #e8e8e8;
+    font-size: 36px;
+    margin-bottom: 20px;
+    z-index: 1; }
+  .rightBanner form {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: start;
+        align-items: flex-start;
+    z-index: 1; }
+  .rightBanner .select {
+    position: relative;
+    width: calc(50% - 10px);
+    margin: 10px 5px; }
+    .rightBanner .select:nth-child(1) {
+      width: calc(100% - 10px); }
+    .rightBanner .select:after {
+      position: absolute;
+      font-family: 'FontAwesome';
+      content: '\f0d7';
+      right: 10px;
+      top: 10px; }
+  .rightBanner select {
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    background: #e8e8e8;
+    color: #333a56;
+    border: 0;
+    font-family: "Open Sans", sans-serif; }
+  .rightBanner button {
+    padding: 10px 30px;
+    border-radius: 0;
+    border: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: #015249;
+    background: white;
+    text-transform: uppercase;
+    font-family: "Work Sans", sans-serif;
+    margin: 20px 5px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease; }
+    .rightBanner button:hover, .rightBanner button:focus {
+      background: #015249;
+      color: white;
+      cursor: pointer; }
+
+.homeContact {
+  text-align: center; }
+  .homeContact .devWrapper {
+    max-width: 700px;
+    margin: auto; }
+  .homeContact h2 {
+    color: #015249;
+    font-size: 40px;
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto 4%; }
+  .homeContact .fullButton {
+    margin-top: 6%; }
+
+.homeNeighbourhoods {
+  background: #efefef; }
+  .homeNeighbourhoods .devWrapper {
+    padding: 6%;
+    text-align: center; }
+  .homeNeighbourhoods h2 {
+    color: #015249;
+    font-size: 40px;
+    font-weight: 400;
+    max-width: 600px;
+    margin: auto; }
+  .homeNeighbourhoods p {
+    max-width: 800px;
+    margin: 20px auto 4%; }
+
+.neighbourhoodsGroup {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.neighbourhoodSingle {
+  width: calc(25% - 20px);
+  margin: 10px; }
+  .neighbourhoodSingle a {
+    text-decoration: none;
+    color: #57bc90; }
+
+.mediaGrid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.instaImage {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  background-size: cover;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px; }
