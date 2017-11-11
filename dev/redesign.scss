@@ -10,6 +10,8 @@ $c3: #015249;
 $c4: #efefef;
 $black: #333;
 
+$gradient: linear-gradient(-45deg, $c2, $c1);
+
 html,
 body {
 	font-family: $fontMain;
@@ -29,15 +31,12 @@ p, li {
 	color: $black;
 }
 
-.devWrapper {
-	padding: 8% 0;
+a {
+	transition: $transition;
 }
 
-header {
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 600;
-	padding: 2% 0;
+.devWrapper {
+	padding: 8%;
 }
 
 .fullButton {
@@ -61,7 +60,242 @@ header {
 }
 
 
+// HEADER
+
+header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: white;
+	box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+	z-index: 5;
+
+	.devWrapper {
+		padding: 20px 3%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		> * {
+			width: 30%;
+		}
+
+		> div {
+			text-align: right;
+		}
+
+		> a {
+			text-decoration: none;
+			font-size: 14px;
+			color: $black;
+		}
+	}
+
+	p {
+		text-align: center;
+		text-transform: uppercase;
+		font-family: $fontTitle;
+		letter-spacing: 1px;
+	}
+
+	.hamburger {
+		position: relative;
+		border: 0;
+		outline: none;
+		height: 22px;
+		width: 30px;
+		padding: 0;
+		z-index: 7;
+
+		span {
+			position: absolute;
+			width: 30px;
+			height: 2px;
+			background: $black;
+			right: 0;
+			transition: $transition;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+
+			&:nth-child(2) {
+				top: 10px;
+			}
+
+			&:nth-child(3) {
+				top: 20px;
+			}
+		}
+
+		&.showMenu {
+			span {
+				&:nth-child(1) {
+					transform: rotate(45deg);
+					top: 10px;
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+					top: 10px;
+				}
+			}
+		}
+	}
+
+	nav {
+		position: fixed;
+		background: white;
+		height: 100vh;
+		width: 80%;
+		max-width: 350px;
+		top: 0;
+		right: -100%;
+		padding: 80px 20px 20px;
+		box-shadow: -10px 0 25px rgba(0,0,0,0.05);
+		z-index: 6;
+		transition: all 0.35s ease;
+
+		&.showMenu {
+			right: 0;
+		}
+
+		> span {
+			position: absolute;
+			top: 15px;
+			width: calc(100% - 40px);
+			display: block;
+			font-family: $fontTitle;
+			font-size: 30px;
+			font-weight: 300;
+			text-transform: uppercase;
+			letter-spacing: 5px;
+			color: $c3;
+			border-bottom: 2px solid $c3;
+			padding-bottom: 10px;
+		}
+
+		ul.subMenu {
+			position: absolute;
+			height: calc(100% - 100px);
+			width: calc(100% - 40px);
+			top: 80px;
+			right: -100%;
+			background: white;
+			z-index: 7;
+			overflow: auto;
+			transition: $transition;
+
+			a {
+				font-size: 16px;
+
+				.fa {
+					position: relative;
+					font-size: 16px;
+					color: inherit;
+					padding-right: 10px;
+				}
+
+				&:hover,
+				&:focus {
+					padding-left: 20px;
+				}
+			}
+
+			&.showSubMenu {
+				right: 20px;
+			}
+		}
+
+		li {
+			list-style: none;
+			margin: 5px 0;
+			border-bottom: 1px solid rgba(0,0,0,0.05);
+
+			&:last-child {
+				border-bottom: 0;
+			}
+
+			&.backSubMenu {
+				border-bottom: 0;
+
+				a {
+					text-transform: uppercase;
+					font-family: $fontTitle;
+					letter-spacing: 2px;
+					color: $c2;
+
+					&:hover,
+					&:focus {
+						padding-left: 0;
+					}
+				}
+			}
+		}
+
+		a {
+			position: relative;
+			display: block;
+			text-decoration: none;
+			color: $black;
+			padding: 10px 0;
+			font-size: 18px;
+			outline: none;
+
+			&:hover,
+			&:focus {
+				color: $c2;
+			}
+
+			.fa {
+				position: absolute;
+				right: 0;
+				font-size: 30px;
+				color: $c2;
+			}
+		}
+
+		> span.menuSocial {
+			bottom: 0;
+			border: 0;
+			top: auto;
+			font-size: 16px;
+			letter-spacing: 2px;
+			text-align: center;
+
+			a {
+				display: inline-block;
+				margin: 5px;
+
+				.fa {
+					position: relative;
+					font-size: 26px;
+					color: $c3;
+					transition: $transition;
+				}
+
+				&:hover,
+				&:focus {
+					.fa {
+						color: $c2;
+					}
+				}
+			}
+		}
+	}
+}
+
+
 // HOME BANNER
+
+.banner {
+	margin-top: 80px;
+}
 
 .banner .devWrapper {
 	display: flex;
@@ -124,8 +358,8 @@ header {
 		height: 100%;
 		top: 0;
 		left: 0;
-		background: linear-gradient(-45deg, $c2, $c1);
-		opacity: 0.95;
+		background: $gradient;
+		opacity: 0.9;
 	}
 
 	h2 {
@@ -134,6 +368,7 @@ header {
 		font-size: 36px;
 		margin-bottom: 20px;
 		z-index: 1;
+		text-shadow: 0 5px 20px rgba(0,0,0,0.25);
 	}
 
 	form {
@@ -205,8 +440,9 @@ header {
 	text-align: center;
 
 	.devWrapper {
-		max-width: 700px;
+		max-width: 800px;
 		margin: auto;
+		padding: 8% 0;
 	}
 
 	h2 {
@@ -229,8 +465,8 @@ header {
 	background: $c4;
 
 	.devWrapper {
-		padding: 6%;
 		text-align: center;
+		padding-bottom: 2%;
 	}
 
 	h2 {
@@ -243,7 +479,7 @@ header {
 
 	p {
 		max-width: 800px;
-		margin: 20px auto 4%;
+		margin: 20px auto 6%;
 	}
 }
 
@@ -255,12 +491,87 @@ header {
 }
 
 .neighbourhoodSingle {
-	width: calc(25% - 20px);
-	margin: 20px 10px;
+	width: 200px;
+	margin: 0 10px 8%;
 
 	a {
 		text-decoration: none;
-		color: $c2;
+		color: white;
+
+		&:hover,
+		&:focus {
+			img {
+				filter: grayscale(1);
+			}
+
+			figure:after {
+				opacity: 0.7;
+			}
+
+			figure:before {
+				opacity: 1;
+			}
+		}
+	}
+
+	h3 {
+		display: inline-block;
+		background: $c3;
+		padding: 2px 15px;
+		font-size: 16px;
+	}
+
+	img {
+		transition: $transition;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+	}
+
+	figure {
+		position: relative;
+		width: 150px;
+		height: 150px;
+		border-radius: 50%;
+		margin: 0 auto 20px;
+
+		&:before {
+			position: absolute;
+			font-family: 'FontAwesome';
+			content: "\f002";
+			color: white;
+			width: 100%;
+			text-align: center;
+			top: 50px;
+			font-size: 30px;
+			opacity: 0;
+			transition: $transition;
+			z-index: 5;
+		}
+
+		&:after {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			top: 0;
+			left: 0;
+			background: $gradient;
+			opacity: 0;
+			transition: $transition;
+		}
+	}
+}
+
+
+// HOME SOCIAL
+
+.homeSocial {
+	.devWrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 }
 
@@ -269,14 +580,126 @@ header {
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
+	width: 500px;
+	height: 500px;
 }
 
 .instaImage {
+	position: relative;
 	display: block;
-	width: 200px;
-	height: 200px;
-	margin: 10px;
+	width: calc(500px / 3 - 4px);
+	height: calc(500px / 3 - 4px);
+	margin: 2px;
 	background-size: cover;
 	border: 1px solid rgba(0,0,0,0.1);
 	border-radius: 3px;
+	opacity: 0.8;
+
+	&:hover,
+	&:focus {
+		opacity: 1;
+	}
+}
+
+.homeSocialDetails {
+	text-align: center;
+	width: calc(90% - 500px);
+
+	h2 {
+		color: $c3;
+		font-size: 40px;
+		font-weight: 400;
+		margin: 0 auto 6%;
+	}
+
+	a {
+		display: block;
+		color: $c2;
+		font-size: 20px;
+		text-decoration: none;
+		margin: 10px auto;
+
+		&:hover,
+		&:focus {
+			color: $c3;
+
+			.fa {
+				opacity: 1;
+			}
+		}
+
+		.fa {
+			color: grey;
+			margin-right: 20px;
+			font-size: 24px;
+			opacity: 0.6;
+			transition: $transition;
+		}
+	}
+}
+
+
+// FOOTER
+
+footer {
+	border-top: 1px solid rgba(0,0,0,0.1);
+
+	.devWrapper {
+		padding: 4% 8%;
+	}
+
+	.footerWrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.leftFooter,
+	.rightFooter {
+		width: 45%;
+	}
+
+	.leftFooter a {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	h3 {
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: 14px;
+		font-weight: 400;
+		color: $c3;
+		margin: 30px 0 20px;
+	}
+
+	ul {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-wrap: wrap;
+		max-width: 700px;
+	}
+
+	li {
+		list-style: none;
+		display: inline-block;
+		padding: 5px 30px 5px 0;
+	}
+	
+	a {
+		text-decoration: none;
+		color: $black;
+		opacity: 0.6;
+		font-size: 14px;
+
+		&:hover,
+		&:focus {
+			opacity: 1;
+		}
+
+		.fa {
+			margin-right: 5px;
+		}
+	}
 }
