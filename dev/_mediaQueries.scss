@@ -1,0 +1,145 @@
+@media screen and (max-width: 900px) {
+	.leftBanner {
+		width: 40%;
+
+		&:before {
+			right: -15%;
+		}
+
+		h1 {
+			font-size: 50px;
+		}
+	}
+
+	.rightBanner {
+		width: 60%;
+	}
+
+	.mediaGrid {
+		width: 300px;
+		height: 300px;
+	}
+
+	.homeSocialDetails {
+		width: calc(90% - 300px);
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.banner {
+		.devWrapper {
+			display: block;
+			height: auto;
+		}
+	}
+
+	.leftBanner {
+		width: 100%;
+		padding: 10% 8%;
+
+		h1 {
+			text-align: center;
+		}
+
+		&:before {
+			display: none;
+		}
+	}
+
+	.rightBanner {
+		width: 100%;
+		padding: 10% 8%;
+	}
+
+	.homeNeighbourhoods {
+		.devWrapper {
+			padding: 8% 4% 2%;
+		}
+	}
+
+	.neighbourhoodSingle {
+		width: 160px;
+	}
+
+	.homeSocial {
+		.devWrapper {
+			flex-direction: column-reverse;
+			padding: 8% 0;
+		}
+	}
+
+	.homeSocialDetails {
+		 width: 100%;
+		 margin-bottom: 6%;
+	}
+
+	.mediaGrid {
+		width: 100%;
+		height: auto;
+	}
+
+	.instaImage {
+		width: 150px;
+		height: 150px;
+	}
+
+	footer {
+		.footerWrap {
+			display: block;
+		}
+
+		.leftFooter,
+		.rightFooter {
+			width: 100%;
+		}
+	}
+}
+
+@media screen and (max-width: 500px) {
+	html,
+	body {
+		margin: 0 5px;
+	}
+
+	header {
+		.devWrapper {
+			> a {
+				display: none;
+			}
+		}
+	}
+
+	.leftBanner {
+		h1 {
+			font-size: 36px;
+		}
+	}
+
+	.rightBanner {
+		h2 {
+			font-size: 30px;
+		}
+		
+		.select {
+			width: calc(100% - 10px);
+		}
+	}
+
+	.homeContact,
+	.homeNeighbourhoods,
+	.homeSocialDetails {
+		h2 {
+			font-size: 30px;
+		}
+	}
+
+	.neighbourhoodSingle {
+		width: 120px;
+
+		figure,
+		img {
+			width: 100px;
+			height: 100px;
+		}
+	}
+}

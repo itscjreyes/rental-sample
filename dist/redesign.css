@@ -190,19 +190,20 @@ header {
         justify-content: space-between;
     -ms-flex-align: center;
         align-items: center; }
-    header .devWrapper > * {
-      width: 30%; }
     header .devWrapper > div {
+      width: 24%;
       text-align: right; }
     header .devWrapper > a {
+      width: 24%;
       text-decoration: none;
       font-size: 14px;
       color: #333; }
-  header p {
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Work Sans", sans-serif;
-    letter-spacing: 1px; }
+    header .devWrapper > p {
+      width: 50%;
+      text-align: center;
+      text-transform: uppercase;
+      font-family: "Work Sans", sans-serif;
+      letter-spacing: 1px; }
   header .hamburger {
     position: relative;
     border: 0;
@@ -238,7 +239,7 @@ header {
     position: fixed;
     background: white;
     height: 100vh;
-    width: 80%;
+    width: 90%;
     max-width: 350px;
     top: 0;
     right: -100%;
@@ -574,8 +575,8 @@ header {
 .instaImage {
   position: relative;
   display: block;
-  width: calc(500px / 3 - 4px);
-  height: calc(500px / 3 - 4px);
+  width: calc(100% / 3 - 4px);
+  height: calc(100% / 3 - 4px);
   margin: 2px;
   background-size: cover;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -656,3 +657,78 @@ footer {
       opacity: 1; }
     footer a .fa {
       margin-right: 5px; }
+
+@media screen and (max-width: 900px) {
+  .leftBanner {
+    width: 40%; }
+    .leftBanner:before {
+      right: -15%; }
+    .leftBanner h1 {
+      font-size: 50px; }
+  .rightBanner {
+    width: 60%; }
+  .mediaGrid {
+    width: 300px;
+    height: 300px; }
+  .homeSocialDetails {
+    width: calc(90% - 300px); } }
+
+@media screen and (max-width: 767px) {
+  .banner .devWrapper {
+    display: block;
+    height: auto; }
+  .leftBanner {
+    width: 100%;
+    padding: 10% 8%; }
+    .leftBanner h1 {
+      text-align: center; }
+    .leftBanner:before {
+      display: none; }
+  .rightBanner {
+    width: 100%;
+    padding: 10% 8%; }
+  .homeNeighbourhoods .devWrapper {
+    padding: 8% 4% 2%; }
+  .neighbourhoodSingle {
+    width: 160px; }
+  .homeSocial .devWrapper {
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    padding: 8% 0; }
+  .homeSocialDetails {
+    width: 100%;
+    margin-bottom: 6%; }
+  .mediaGrid {
+    width: 100%;
+    height: auto; }
+  .instaImage {
+    width: 150px;
+    height: 150px; }
+  footer .footerWrap {
+    display: block; }
+  footer .leftFooter,
+  footer .rightFooter {
+    width: 100%; } }
+
+@media screen and (max-width: 500px) {
+  html,
+  body {
+    margin: 0 5px; }
+  header .devWrapper > a {
+    display: none; }
+  .leftBanner h1 {
+    font-size: 36px; }
+  .rightBanner h2 {
+    font-size: 30px; }
+  .rightBanner .select {
+    width: calc(100% - 10px); }
+  .homeContact h2,
+  .homeNeighbourhoods h2,
+  .homeSocialDetails h2 {
+    font-size: 30px; }
+  .neighbourhoodSingle {
+    width: 120px; }
+    .neighbourhoodSingle figure,
+    .neighbourhoodSingle img {
+      width: 100px;
+      height: 100px; } }

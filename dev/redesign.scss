@@ -77,27 +77,27 @@ header {
 		justify-content: space-between;
 		align-items: center;
 
-		> * {
-			width: 30%;
-		}
-
 		> div {
+			width: 24%;
 			text-align: right;
 		}
 
 		> a {
+			width: 24%;
 			text-decoration: none;
 			font-size: 14px;
 			color: $black;
 		}
+		
+		> p {
+			width: 50%;
+			text-align: center;
+			text-transform: uppercase;
+			font-family: $fontTitle;
+			letter-spacing: 1px;
+		}
 	}
 
-	p {
-		text-align: center;
-		text-transform: uppercase;
-		font-family: $fontTitle;
-		letter-spacing: 1px;
-	}
 
 	.hamburger {
 		position: relative;
@@ -152,7 +152,7 @@ header {
 		position: fixed;
 		background: white;
 		height: 100vh;
-		width: 80%;
+		width: 90%;
 		max-width: 350px;
 		top: 0;
 		right: -100%;
@@ -587,8 +587,8 @@ header {
 .instaImage {
 	position: relative;
 	display: block;
-	width: calc(500px / 3 - 4px);
-	height: calc(500px / 3 - 4px);
+	width: calc(100% / 3 - 4px);
+	height: calc(100% / 3 - 4px);
 	margin: 2px;
 	background-size: cover;
 	border: 1px solid rgba(0,0,0,0.1);
@@ -703,3 +703,5 @@ footer {
 		}
 	}
 }
+
+@import 'mediaQueries';
