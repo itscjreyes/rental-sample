@@ -1,8 +1,23 @@
+/*!
+* Theme Name: Custom Theme
+* Theme URI: http://cjreyes.ca;
+* Description: Custom theme for rentofficespacetoronto.com
+* Version: 1.0
+* Author: CJ Reyes
+* Author URI: http://cjreyes.ca
+*/
+
 @import 'setup';
 
-$fontTitle: 'Work Sans', sans-serif;
+/*
+====================================
+Default Styling
+====================================
+*/
+
+$fontTitle: 'Pacifico', serif;
 $fontMain: 'Open Sans', sans-serif;
-$transition: all 0.3s ease;
+$transition: all 0.15s ease;
 
 $c1: #77c9d4;
 $c2: #57bc90;
@@ -16,23 +31,6 @@ html,
 body {
 	font-family: $fontMain;
 	margin: 0 13px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-	font-family: $fontTitle;
-	font-weight: 300;
-}
-
-p, li {
-	color: $black;
-}
-
-a {
-	transition: $transition;
 }
 
 .devWrapper {
@@ -49,7 +47,6 @@ a {
 	color: white;
 	background: $c3;
 	text-transform: uppercase;
-	font-family: $fontTitle;
 	transition: $transition;
 	text-decoration: none;
 
@@ -59,298 +56,108 @@ a {
 	}
 }
 
+span.neighbourhood-field {
+	position: relative;
 
-// HEADER
-
-header {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	background: white;
-	box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-	z-index: 5;
-
-	.devWrapper {
-		padding: 20px 3%;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		> div {
-			width: 24%;
-			text-align: right;
-		}
-
-		> a {
-			width: 24%;
-			text-decoration: none;
-			font-size: 14px;
-			color: $black;
-		}
-		
-		> p {
-			width: 50%;
-			text-align: center;
-			text-transform: uppercase;
-			font-family: $fontTitle;
-			letter-spacing: 1px;
-		}
+	&:nth-child(1) {
+		width: calc(100% - 10px);
 	}
 
-
-	.hamburger {
-		position: relative;
-		border: 0;
-		outline: none;
-		height: 22px;
-		width: 30px;
-		padding: 0;
-		z-index: 7;
-
-		span {
-			position: absolute;
-			width: 30px;
-			height: 2px;
-			background: $black;
-			right: 0;
-			transition: $transition;
-
-			&:nth-child(1) {
-				top: 0;
-			}
-
-			&:nth-child(2) {
-				top: 10px;
-			}
-
-			&:nth-child(3) {
-				top: 20px;
-			}
-		}
-
-		&.showMenu {
-			span {
-				&:nth-child(1) {
-					transform: rotate(45deg);
-					top: 10px;
-				}
-
-				&:nth-child(2) {
-					opacity: 0;
-				}
-
-				&:nth-child(3) {
-					transform: rotate(-45deg);
-					top: 10px;
-				}
-			}
-		}
-	}
-
-	nav {
-		position: fixed;
-		background: white;
-		height: 100vh;
-		width: 90%;
-		max-width: 350px;
-		top: 0;
-		right: -100%;
-		padding: 80px 20px 20px;
-		box-shadow: -10px 0 25px rgba(0,0,0,0.05);
-		z-index: 6;
-		transition: all 0.35s ease;
-
-		&.showMenu {
-			right: 0;
-		}
-
-		> span {
-			position: absolute;
-			top: 15px;
-			width: calc(100% - 40px);
-			display: block;
-			font-family: $fontTitle;
-			font-size: 30px;
-			font-weight: 300;
-			text-transform: uppercase;
-			letter-spacing: 5px;
-			color: $c3;
-			border-bottom: 2px solid $c3;
-			padding-bottom: 10px;
-		}
-
-		ul.subMenu {
-			position: absolute;
-			height: calc(100% - 100px);
-			width: calc(100% - 40px);
-			top: 80px;
-			right: -100%;
-			background: white;
-			z-index: 7;
-			overflow: auto;
-			transition: $transition;
-
-			a {
-				font-size: 16px;
-
-				.fa {
-					position: relative;
-					font-size: 16px;
-					color: inherit;
-					padding-right: 10px;
-				}
-
-				&:hover,
-				&:focus {
-					padding-left: 20px;
-				}
-			}
-
-			&.showSubMenu {
-				right: 20px;
-			}
-		}
-
-		li {
-			list-style: none;
-			margin: 5px 0;
-			border-bottom: 1px solid rgba(0,0,0,0.05);
-
-			&:last-child {
-				border-bottom: 0;
-			}
-
-			&.backSubMenu {
-				border-bottom: 0;
-
-				a {
-					text-transform: uppercase;
-					font-family: $fontTitle;
-					letter-spacing: 2px;
-					color: $c2;
-
-					&:hover,
-					&:focus {
-						padding-left: 0;
-					}
-				}
-			}
-		}
-
-		a {
-			position: relative;
-			display: block;
-			text-decoration: none;
-			color: $black;
-			padding: 10px 0;
-			font-size: 18px;
-			outline: none;
-
-			&:hover,
-			&:focus {
-				color: $c2;
-			}
-
-			.fa {
-				position: absolute;
-				right: 0;
-				font-size: 30px;
-				color: $c2;
-			}
-		}
-
-		> span.menuSocial {
-			bottom: 0;
-			border: 0;
-			top: auto;
-			font-size: 16px;
-			letter-spacing: 2px;
-			text-align: center;
-
-			a {
-				display: inline-block;
-				margin: 5px;
-
-				.fa {
-					position: relative;
-					font-size: 26px;
-					color: $c3;
-					transition: $transition;
-				}
-
-				&:hover,
-				&:focus {
-					.fa {
-						color: $c2;
-					}
-				}
-			}
-		}
+	&:after {
+		position: absolute;
+		font-family: 'FontAwesome';
+		content: '\f0d7';
+		right: 10px;
+		top: 8px;
 	}
 }
 
+select,
+input,
+textarea {
+	-webkit-appearance: none;
+	border-radius: 2px;
+	padding: 10px;
+	font-size: 14px;
+	width: 100%;
+	background: #e8e8e8;
+	border: 0;
+	font-family: $fontMain;
+}
+
+textarea {
+	height: 100px;
+	resize: none;
+}
+
+input[type="submit"] {
+	width: auto;
+	padding: 10px 30px;
+	border-radius: 0;
+	border: 0;
+	font-weight: 400;
+	font-size: 14px;
+	color: white !important;
+	background: $c3;
+	text-transform: uppercase;
+	transition: $transition;
+	margin-top: 30px;
+
+	&:hover,
+	&:focus {
+		box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+	}
+}
+
+.wpcf7-form-control-wrap {
+	display: block;
+}
+
+/*
+====================================
+End Default Styling
+====================================
+*/
+
+/*
+====================================
+Home Page Styling
+====================================
+*/
 
 // HOME BANNER
 
-.banner {
-	margin-top: 80px;
+.banner,
+.innerBanner {
+	margin-top: 105px;
+}
+
+.innerBanner {
+	background: $gradient;
+
+	h1 {
+		text-align: center;
+		color: white;
+		text-transform: uppercase;
+		font-family: $fontMain;
+		letter-spacing: 2px;
+		font-size: 40px;
+	}
 }
 
 .banner .devWrapper {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	height: 85vh;
-	min-height: 400px;
-	padding: 0;
-}
-
-.leftBanner {
 	position: relative;
-	width: 45%;
-	height: 100%;
-	padding-left: 3%;
-	background: $c3;
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	align-items: center;
-	justify-content: center;
-
-	h1 {
-		position: relative;
-		color: white;
-		font-size: 60px;
-		text-align: right;
-		z-index: 2;
-	}
-
-	&:before {
-		position: absolute;
-		content: "";
-		height: 100%;
-		width: 50%;
-		background: $c3;
-		transform: skew(-8deg);
-		top: 0;
-		right: -10%;
-		box-shadow: 10px 0 20px rgba(0,0,0,0.08);
-		z-index: 1;
-	}
-}
-
-.rightBanner {
-	position: relative;
-	width: 55%;
-	height: 100%;
-	background-image: url('http://rentofficespacetoronto.com/wp-content/uploads/2017/11/toronto-city-background.jpg');
+	height: 80vh;
+	min-height: 400px;
+	padding: 4%;
+	background-image: url('http://rentofficespacetoronto.com/wp-content/uploads/2017/11/home-banner-img.jpg');
 	background-size: cover;
 	background-position: center;
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	flex-direction: column;
-	padding: 0 5% 0 10%;
-
+	
 	&:after {
 		position: absolute;
 		content: "";
@@ -358,17 +165,20 @@ header {
 		height: 100%;
 		top: 0;
 		left: 0;
-		background: $gradient;
-		opacity: 0.9;
+		background: black;
+		opacity: 0.3;
 	}
 
-	h2 {
+
+	h1 {
 		position: relative;
+		text-align: center;
 		color: #e8e8e8;
-		font-size: 36px;
+		font-size: 60px;
 		margin-bottom: 20px;
-		z-index: 1;
+		line-height: 1.4;
 		text-shadow: 0 5px 20px rgba(0,0,0,0.25);
+		z-index: 1;
 	}
 
 	form {
@@ -377,6 +187,7 @@ header {
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: flex-start;
+		max-width: 600px;
 		z-index: 1;
 	}
 
@@ -419,8 +230,7 @@ header {
 		color: $c3;
 		background: white;
 		text-transform: uppercase;
-		font-family: $fontTitle;
-		margin: 20px 5px 0;
+		margin: 20px auto 0;
 		box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 		transition: $transition;
 
@@ -437,6 +247,7 @@ header {
 // HOME CONTACT BANNER
 
 .homeContact {
+	background: $c4;
 	text-align: center;
 
 	.devWrapper {
@@ -453,6 +264,10 @@ header {
 		margin: 0 auto 4%;
 	}
 
+	h3 {
+		font-family: $fontMain;
+	}
+
 	.fullButton {
 		margin-top: 6%;
 	}
@@ -462,11 +277,9 @@ header {
 // NEIGHBOURHOODS
 
 .homeNeighbourhoods {
-	background: $c4;
-
 	.devWrapper {
 		text-align: center;
-		padding-bottom: 2%;
+		padding: 8% 2% 2%;
 	}
 
 	h2 {
@@ -516,6 +329,7 @@ header {
 
 	h3 {
 		display: inline-block;
+		font-family: $fontMain;
 		background: $c3;
 		padding: 2px 15px;
 		font-size: 16px;
@@ -546,7 +360,7 @@ header {
 			font-size: 30px;
 			opacity: 0;
 			transition: $transition;
-			z-index: 5;
+			z-index: 4;
 		}
 
 		&:after {
@@ -638,70 +452,405 @@ header {
 	}
 }
 
+/*
+====================================
+End Home Page Styling
+====================================
+*/
 
-// FOOTER
+/*
+====================================
+Blog Styling
+====================================
+*/
 
-footer {
-	border-top: 1px solid rgba(0,0,0,0.1);
+.listingWrapper {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
 
-	.devWrapper {
-		padding: 4% 8%;
+.blogPost {
+	display: block;
+	width: calc(100% / 3 - 40px);
+	margin: 0 20px 6%;
+	text-decoration: none;
+
+	&:nth-child(1) {
+		width: calc(100% - 40px);
+
+		.postImg {
+			height: 250px;
+		}
 	}
 
-	.footerWrap {
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-	}
+	&:hover,
+	&:focus {
+		.postImg {
+			span {
+				opacity: 1;
+			}
 
-	.leftFooter,
-	.rightFooter {
-		width: 45%;
-	}
-
-	.leftFooter a {
-		display: block;
-		margin-bottom: 10px;
+			&:after {
+				opacity: 0.5;
+			}
+		}
 	}
 
 	h3 {
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		font-size: 14px;
-		font-weight: 400;
 		color: $c3;
-		margin: 30px 0 20px;
+	}
+}
+
+.postImg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	height: 200px;
+	margin-bottom: 15px;
+
+	span {
+		position: relative;
+		padding: 10px 20px;
+		background: $gradient;
+		color: white;
+		text-transform: uppercase;
+		font-weight: 300;
+		font-size: 12px;
+		letter-spacing: 2px;
+		z-index: 1;
+		transition: $transition;
+		opacity: 0;
 	}
 
-	ul {
-		display: flex;
-		justify-content: flex-start;
-		align-items: flex-start;
-		flex-wrap: wrap;
-		max-width: 700px;
+	&:after {
+		position: absolute;
+		content: "";
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: black;
+		opacity: 0;
+		transition: $transition;
 	}
+}
+
+.postDate {
+	opacity: 0.8;
+	font-size: 14px;
+	font-style: italic;
+	margin-bottom: 10px;
+}
+
+.navigation {
+	margin-top: 20px;
+	padding-left: 20px;
 
 	li {
 		list-style: none;
 		display: inline-block;
-		padding: 5px 30px 5px 0;
+
+		a {
+			text-decoration: none;
+			padding: 5px;
+			margin-right: 5px;
+			opacity: 0.4;
+			color: $black;
+		}
 	}
-	
-	a {
+
+	li.active a,
+	li a:hover,
+	li a:focus {
+		opacity: 1;
+	}
+
+	li.active a {
+		color: $c3;
+		border-bottom: 2px solid $c3;
+	}
+
+	ul > a {
+		text-transform: uppercase;
 		text-decoration: none;
-		color: $black;
+		letter-spacing: 1px;
+		color: $c1;
+		font-weight: 400;
+		padding: 5px 10px;
 		opacity: 0.6;
-		font-size: 14px;
 
 		&:hover,
 		&:focus {
+			color: $c3;
 			opacity: 1;
-		}
-
-		.fa {
-			margin-right: 5px;
 		}
 	}
 }
 
+.blogBanner {
+	.devWrapper {
+		position: relative;
+		background-size: cover;
+		background-position: center;
+		padding: 10% 8%;
+		text-align: center;
+
+		&:after {
+			position: absolute;
+			content: "";
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			background: black;
+			opacity: 0.2;
+		}
+	}
+
+	h1,
+	span {
+		position: relative;
+		z-index: 1;
+	}
+
+	h1 {
+		font-size: 34px;
+		letter-spacing: 0;
+	}
+
+	span {
+		display: inline-block;
+		color: white;
+		background: $gradient;
+		padding: 5px 15px;
+		text-transform: uppercase;
+		font-size: 12px;
+		letter-spacing: 2px;
+		margin-bottom: 15px;
+	}
+}
+
+.postContent {
+	h2,
+	h3,
+	h4,
+	h5 {
+		padding: 20px 0 5px;
+	}
+
+	h2 {
+		font-family: $fontMain;
+		font-size: 30px;
+	}
+
+	h3 {
+		font-size: 26px;
+	}
+
+	h4 {
+		font-size: 22px;
+	}
+
+	h5 {
+		font-size: 20px;
+	}
+
+	p {
+		padding: 10px 0;
+	}
+
+	ul,
+	ol {
+		padding: 2px 0 2px 20px;
+	}
+
+	a {
+		color: $c1;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			color: $c3;
+			text-decoration: underline;
+		}
+	}
+}
+
+/*
+====================================
+End Blog Styling
+====================================
+*/
+
+/*
+====================================
+End Contact Styling
+====================================
+*/
+
+.contactSection .devWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.contactForm {
+	width: 45%;
+
+	h2 {
+		font-size: 30px;
+		text-align: center;
+		margin-bottom: 6%;
+		color: $c3;
+	}
+
+	form > p > label,
+	.divider {
+		text-transform: uppercase;
+		font-size: 14px;
+		color: $c3;
+	}
+}
+
+.contactImgs {
+	width: 45%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	height: 400px;
+	margin-top: 6%;
+
+	div {
+		background-size: cover;
+		background-position: center;
+		height: calc(50% - 20px);
+		margin: 10px;
+
+
+		&:nth-child(1) {
+			width: calc(100% - 20px);
+		}
+
+		&:nth-child(2),
+		&:nth-child(3) {
+			width: calc(50% - 20px);
+		}
+	}
+}
+
+/*
+====================================
+End Contact Styling
+====================================
+*/
+
+#map {
+	position: fixed;
+	background-image: url('http://rentofficespacetoronto.com/wp-content/uploads/2017/11/map-sample.png');
+	background-size: cover;
+	background-position: top;
+	height: calc(100vh - 100px);
+	width: 50vw;
+	top: 100px;
+	left: 0;
+}
+
+#idxblueContainer {
+	width: 45vw;
+	margin-right: 0;
+	margin-left: auto;
+	margin-top: 120px;
+	padding-bottom: 30px;
+	height: calc(100vw - 150px);
+	overflow: auto;
+}
+
+.output_1_listingcontainer {
+	float: left;
+	width: calc(50% - 10px);
+	margin: 5px;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-radius: 2px;
+	transition: $transition;
+
+	&:hover {
+		box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+	}
+
+	em {
+		display: none;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	button {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 20px 30px;
+		border-radius: 0;
+		border: 0;
+		font-weight: 400;
+		font-size: 14px;
+		color: white;
+		background: $c2;
+		text-transform: uppercase;
+		transition: $transition;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+		}
+	}
+}
+
+.output_1_listingcontainer_bootstrap_image {
+	height: 150px;
+	overflow: hidden;
+
+	img {
+		width: 100%;
+		margin: 0 !important;
+		float: none !important;
+		border-radius: 2px;
+	}
+}
+
+.output_1_listingcontainer_bootstrap_description {
+	text-align: center;
+
+	h3 {
+		color: $c3;
+		padding: 0 4%;
+		font-size: 22px;
+		margin-bottom: 10px;
+
+		&:first-child {
+			color: $black;
+			font-size: 14px;
+			margin-bottom: 15px;
+		}
+	}
+
+	li {
+		list-style: none;
+		font-size: 14px;
+		background: #efefef;
+		padding: 5px;
+	}
+}
+
+@import 'typography';
+@import 'navigation';
+@import 'footer';
 @import 'mediaQueries';
+

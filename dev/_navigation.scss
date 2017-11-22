@@ -1,0 +1,193 @@
+header {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: white;
+	box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+	z-index: 5;
+
+	.devWrapper {
+		padding: 20px 3% 0;
+	}
+
+	.topBar {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		.headerPhone {
+			font-size: 14px;
+			padding-right: 20px;
+
+			a {
+				text-decoration: none;
+				color: $black;
+			}
+		}
+
+		span.menuSocial {
+			font-size: 16px;
+			letter-spacing: 2px;
+			text-align: center;
+
+			a {
+				display: inline-block;
+				margin: 0 5px;
+
+				.fa {
+					position: relative;
+					font-size: 20px;
+					color: $black;
+					transition: $transition;
+					opacity: 0.8;
+				}
+
+				&:hover,
+				&:focus {
+					.fa {
+						color: $c3;
+						opacity: 1;
+					}
+				}
+			}
+		}
+	}
+
+
+	.hamburger {
+		display: none;
+		position: relative;
+		border: 0;
+		outline: none;
+		height: 22px;
+		width: 30px;
+		padding: 0;
+		background: transparent;
+		z-index: 7;
+
+		span {
+			position: absolute;
+			width: 30px;
+			height: 2px;
+			background: $black;
+			right: 0;
+			transition: $transition;
+
+			&:nth-child(1) {
+				top: 0;
+			}
+
+			&:nth-child(2) {
+				top: 10px;
+			}
+
+			&:nth-child(3) {
+				top: 20px;
+			}
+		}
+
+		&.showMenu {
+			span {
+				&:nth-child(1) {
+					transform: rotate(45deg);
+					top: 10px;
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+					top: 10px;
+				}
+			}
+		}
+	}
+
+	.headerMenu {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.logo {
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			text-decoration: none;
+			color: $black;
+		}
+	}
+
+	nav {
+		> span {
+			display: none;
+		}
+
+		li {
+			list-style: none;
+
+			&.itemHasChildren {
+				position: relative;
+
+				a .fa {
+					display: none;
+				}
+
+				&:hover {
+					.subMenu {
+						opacity: 1;
+						visibility: visible;
+						top: 100%;
+					}
+				}
+			}
+		}
+
+		.backSubMenu {
+			display: none;
+		}
+
+		> ul > li {
+			display: inline-block;
+
+			> a {
+				display: block;
+				padding: 15px 15px 20px;
+				border-bottom: 2px solid white;
+
+				&:hover,
+				&:focus {
+					border-bottom: 2px solid $c3;
+				}
+			}
+		}
+
+		.subMenu {
+			position: absolute;
+			background: white;
+			width: 100%;
+			opacity: 0;
+			visibility: hidden;
+			top: -50%;
+			transition: $transition;
+
+			li a {
+				display: block;
+				padding: 2px 15px;
+
+				&:hover,
+				&:focus {
+					background: $c3;
+					color: white;
+				}
+			}
+		}
+
+		a {
+			color: $black;
+			text-decoration: none;
+
+		}
+	}
+}

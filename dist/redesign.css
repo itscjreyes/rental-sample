@@ -1,3 +1,16 @@
+/*!
+* Theme Name: Custom Theme
+* Theme URI: http://cjreyes.ca;
+* Description: Custom theme for rentofficespacetoronto.com
+* Version: 1.0
+* Author: CJ Reyes
+* Author URI: http://cjreyes.ca
+*/
+/*
+=============================================================================
+                   Normalize, border box and clearfix
+=============================================================================
+*/
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
   display: block; }
 
@@ -136,24 +149,15 @@ p, a, li {
 * {
   box-sizing: border-box; }
 
+/*
+====================================
+Default Styling
+====================================
+*/
 html,
 body {
   font-family: "Open Sans", sans-serif;
   margin: 0 13px; }
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "Work Sans", sans-serif;
-  font-weight: 300; }
-
-p, li {
-  color: #333; }
-
-a {
-  transition: all 0.3s ease; }
 
 .devWrapper {
   padding: 8%; }
@@ -168,247 +172,115 @@ a {
   color: white;
   background: #015249;
   text-transform: uppercase;
-  font-family: "Work Sans", sans-serif;
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
   text-decoration: none; }
   .fullButton:hover, .fullButton:focus {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
 
-header {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: white;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-  z-index: 5; }
-  header .devWrapper {
-    padding: 20px 3%;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    -ms-flex-align: center;
-        align-items: center; }
-    header .devWrapper > div {
-      width: 24%;
-      text-align: right; }
-    header .devWrapper > a {
-      width: 24%;
-      text-decoration: none;
-      font-size: 14px;
-      color: #333; }
-    header .devWrapper > p {
-      width: 50%;
-      text-align: center;
-      text-transform: uppercase;
-      font-family: "Work Sans", sans-serif;
-      letter-spacing: 1px; }
-  header .hamburger {
-    position: relative;
-    border: 0;
-    outline: none;
-    height: 22px;
-    width: 30px;
-    padding: 0;
-    z-index: 7; }
-    header .hamburger span {
-      position: absolute;
-      width: 30px;
-      height: 2px;
-      background: #333;
-      right: 0;
-      transition: all 0.3s ease; }
-      header .hamburger span:nth-child(1) {
-        top: 0; }
-      header .hamburger span:nth-child(2) {
-        top: 10px; }
-      header .hamburger span:nth-child(3) {
-        top: 20px; }
-    header .hamburger.showMenu span:nth-child(1) {
-      -ms-transform: rotate(45deg);
-          transform: rotate(45deg);
-      top: 10px; }
-    header .hamburger.showMenu span:nth-child(2) {
-      opacity: 0; }
-    header .hamburger.showMenu span:nth-child(3) {
-      -ms-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-      top: 10px; }
-  header nav {
-    position: fixed;
-    background: white;
-    height: 100vh;
-    width: 90%;
-    max-width: 350px;
-    top: 0;
-    right: -100%;
-    padding: 80px 20px 20px;
-    box-shadow: -10px 0 25px rgba(0, 0, 0, 0.05);
-    z-index: 6;
-    transition: all 0.35s ease; }
-    header nav.showMenu {
-      right: 0; }
-    header nav > span {
-      position: absolute;
-      top: 15px;
-      width: calc(100% - 40px);
-      display: block;
-      font-family: "Work Sans", sans-serif;
-      font-size: 30px;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      color: #015249;
-      border-bottom: 2px solid #015249;
-      padding-bottom: 10px; }
-    header nav ul.subMenu {
-      position: absolute;
-      height: calc(100% - 100px);
-      width: calc(100% - 40px);
-      top: 80px;
-      right: -100%;
-      background: white;
-      z-index: 7;
-      overflow: auto;
-      transition: all 0.3s ease; }
-      header nav ul.subMenu a {
-        font-size: 16px; }
-        header nav ul.subMenu a .fa {
-          position: relative;
-          font-size: 16px;
-          color: inherit;
-          padding-right: 10px; }
-        header nav ul.subMenu a:hover, header nav ul.subMenu a:focus {
-          padding-left: 20px; }
-      header nav ul.subMenu.showSubMenu {
-        right: 20px; }
-    header nav li {
-      list-style: none;
-      margin: 5px 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
-      header nav li:last-child {
-        border-bottom: 0; }
-      header nav li.backSubMenu {
-        border-bottom: 0; }
-        header nav li.backSubMenu a {
-          text-transform: uppercase;
-          font-family: "Work Sans", sans-serif;
-          letter-spacing: 2px;
-          color: #57bc90; }
-          header nav li.backSubMenu a:hover, header nav li.backSubMenu a:focus {
-            padding-left: 0; }
-    header nav a {
-      position: relative;
-      display: block;
-      text-decoration: none;
-      color: #333;
-      padding: 10px 0;
-      font-size: 18px;
-      outline: none; }
-      header nav a:hover, header nav a:focus {
-        color: #57bc90; }
-      header nav a .fa {
-        position: absolute;
-        right: 0;
-        font-size: 30px;
-        color: #57bc90; }
-    header nav > span.menuSocial {
-      bottom: 0;
-      border: 0;
-      top: auto;
-      font-size: 16px;
-      letter-spacing: 2px;
-      text-align: center; }
-      header nav > span.menuSocial a {
-        display: inline-block;
-        margin: 5px; }
-        header nav > span.menuSocial a .fa {
-          position: relative;
-          font-size: 26px;
-          color: #015249;
-          transition: all 0.3s ease; }
-        header nav > span.menuSocial a:hover .fa, header nav > span.menuSocial a:focus .fa {
-          color: #57bc90; }
+span.neighbourhood-field {
+  position: relative; }
+  span.neighbourhood-field:nth-child(1) {
+    width: calc(100% - 10px); }
+  span.neighbourhood-field:after {
+    position: absolute;
+    font-family: 'FontAwesome';
+    content: '\f0d7';
+    right: 10px;
+    top: 8px; }
 
-.banner {
-  margin-top: 80px; }
+select,
+input,
+textarea {
+  -webkit-appearance: none;
+  border-radius: 2px;
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+  background: #e8e8e8;
+  border: 0;
+  font-family: "Open Sans", sans-serif; }
+
+textarea {
+  height: 100px;
+  resize: none; }
+
+input[type="submit"] {
+  width: auto;
+  padding: 10px 30px;
+  border-radius: 0;
+  border: 0;
+  font-weight: 400;
+  font-size: 14px;
+  color: white !important;
+  background: #015249;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  margin-top: 30px; }
+  input[type="submit"]:hover, input[type="submit"]:focus {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
+
+.wpcf7-form-control-wrap {
+  display: block; }
+
+/*
+====================================
+End Default Styling
+====================================
+*/
+/*
+====================================
+Home Page Styling
+====================================
+*/
+.banner,
+.innerBanner {
+  margin-top: 105px; }
+
+.innerBanner {
+  background: linear-gradient(-45deg, #57bc90, #77c9d4); }
+  .innerBanner h1 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: 2px;
+    font-size: 40px; }
 
 .banner .devWrapper {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: start;
-      align-items: flex-start;
-  height: 85vh;
-  min-height: 400px;
-  padding: 0; }
-
-.leftBanner {
   position: relative;
-  width: 45%;
-  height: 100%;
-  padding-left: 3%;
-  background: #015249;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center; }
-  .leftBanner h1 {
-    position: relative;
-    color: white;
-    font-size: 60px;
-    text-align: right;
-    z-index: 2; }
-  .leftBanner:before {
-    position: absolute;
-    content: "";
-    height: 100%;
-    width: 50%;
-    background: #015249;
-    -ms-transform: skew(-8deg);
-        transform: skew(-8deg);
-    top: 0;
-    right: -10%;
-    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.08);
-    z-index: 1; }
-
-.rightBanner {
-  position: relative;
-  width: 55%;
-  height: 100%;
-  background-image: url("http://rentofficespacetoronto.com/wp-content/uploads/2017/11/toronto-city-background.jpg");
-  background-size: cover;
-  background-position: center;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: start;
-      align-items: flex-start;
   -ms-flex-direction: column;
       flex-direction: column;
-  padding: 0 5% 0 10%; }
-  .rightBanner:after {
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 80vh;
+  min-height: 400px;
+  padding: 4%;
+  background-image: url("http://rentofficespacetoronto.com/wp-content/uploads/2017/11/home-banner-img.jpg");
+  background-size: cover;
+  background-position: center; }
+  .banner .devWrapper:after {
     position: absolute;
     content: "";
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(-45deg, #57bc90, #77c9d4);
-    opacity: 0.9; }
-  .rightBanner h2 {
+    background: black;
+    opacity: 0.3; }
+  .banner .devWrapper h1 {
     position: relative;
+    text-align: center;
     color: #e8e8e8;
-    font-size: 36px;
+    font-size: 60px;
     margin-bottom: 20px;
-    z-index: 1;
-    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); }
-  .rightBanner form {
+    line-height: 1.4;
+    text-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1; }
+  .banner .devWrapper form {
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -418,20 +290,21 @@ header {
         justify-content: space-between;
     -ms-flex-align: start;
         align-items: flex-start;
+    max-width: 600px;
     z-index: 1; }
-  .rightBanner .select {
+  .banner .devWrapper .select {
     position: relative;
     width: calc(50% - 10px);
     margin: 10px 5px; }
-    .rightBanner .select:nth-child(1) {
+    .banner .devWrapper .select:nth-child(1) {
       width: calc(100% - 10px); }
-    .rightBanner .select:after {
+    .banner .devWrapper .select:after {
       position: absolute;
       font-family: 'FontAwesome';
       content: '\f0d7';
       right: 10px;
       top: 10px; }
-  .rightBanner select {
+  .banner .devWrapper select {
     -webkit-appearance: none;
     border-radius: 0;
     padding: 10px;
@@ -441,7 +314,7 @@ header {
     color: #333a56;
     border: 0;
     font-family: "Open Sans", sans-serif; }
-  .rightBanner button {
+  .banner .devWrapper button {
     padding: 10px 30px;
     border-radius: 0;
     border: 0;
@@ -450,16 +323,16 @@ header {
     color: #015249;
     background: white;
     text-transform: uppercase;
-    font-family: "Work Sans", sans-serif;
-    margin: 20px 5px 0;
+    margin: 20px auto 0;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease; }
-    .rightBanner button:hover, .rightBanner button:focus {
+    transition: all 0.15s ease; }
+    .banner .devWrapper button:hover, .banner .devWrapper button:focus {
       background: #015249;
       color: white;
       cursor: pointer; }
 
 .homeContact {
+  background: #efefef;
   text-align: center; }
   .homeContact .devWrapper {
     max-width: 800px;
@@ -471,23 +344,25 @@ header {
     font-weight: 400;
     max-width: 600px;
     margin: 0 auto 4%; }
+  .homeContact h3 {
+    font-family: "Open Sans", sans-serif; }
   .homeContact .fullButton {
     margin-top: 6%; }
 
-.homeNeighbourhoods {
-  background: #efefef; }
-  .homeNeighbourhoods .devWrapper {
-    text-align: center;
-    padding-bottom: 2%; }
-  .homeNeighbourhoods h2 {
-    color: #015249;
-    font-size: 40px;
-    font-weight: 400;
-    max-width: 600px;
-    margin: auto; }
-  .homeNeighbourhoods p {
-    max-width: 800px;
-    margin: 20px auto 6%; }
+.homeNeighbourhoods .devWrapper {
+  text-align: center;
+  padding: 8% 2% 2%; }
+
+.homeNeighbourhoods h2 {
+  color: #015249;
+  font-size: 40px;
+  font-weight: 400;
+  max-width: 600px;
+  margin: auto; }
+
+.homeNeighbourhoods p {
+  max-width: 800px;
+  margin: 20px auto 6%; }
 
 .neighbourhoodsGroup {
   display: -ms-flexbox;
@@ -514,11 +389,12 @@ header {
       opacity: 1; }
   .neighbourhoodSingle h3 {
     display: inline-block;
+    font-family: "Open Sans", sans-serif;
     background: #015249;
     padding: 2px 15px;
     font-size: 16px; }
   .neighbourhoodSingle img {
-    transition: all 0.3s ease;
+    transition: all 0.15s ease;
     width: 150px;
     height: 150px;
     border-radius: 50%; }
@@ -538,8 +414,8 @@ header {
       top: 50px;
       font-size: 30px;
       opacity: 0;
-      transition: all 0.3s ease;
-      z-index: 5; }
+      transition: all 0.15s ease;
+      z-index: 4; }
     .neighbourhoodSingle figure:after {
       position: absolute;
       content: "";
@@ -550,7 +426,7 @@ header {
       left: 0;
       background: linear-gradient(-45deg, #57bc90, #77c9d4);
       opacity: 0;
-      transition: all 0.3s ease; }
+      transition: all 0.15s ease; }
 
 .homeSocial .devWrapper {
   display: -ms-flexbox;
@@ -608,7 +484,455 @@ header {
       margin-right: 20px;
       font-size: 24px;
       opacity: 0.6;
-      transition: all 0.3s ease; }
+      transition: all 0.15s ease; }
+
+/*
+====================================
+End Home Page Styling
+====================================
+*/
+/*
+====================================
+Blog Styling
+====================================
+*/
+.listingWrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-align: start;
+      align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.blogPost {
+  display: block;
+  width: calc(100% / 3 - 40px);
+  margin: 0 20px 6%;
+  text-decoration: none; }
+  .blogPost:nth-child(1) {
+    width: calc(100% - 40px); }
+    .blogPost:nth-child(1) .postImg {
+      height: 250px; }
+  .blogPost:hover .postImg span, .blogPost:focus .postImg span {
+    opacity: 1; }
+  .blogPost:hover .postImg:after, .blogPost:focus .postImg:after {
+    opacity: 0.5; }
+  .blogPost h3 {
+    color: #015249; }
+
+.postImg {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  margin-bottom: 15px; }
+  .postImg span {
+    position: relative;
+    padding: 10px 20px;
+    background: linear-gradient(-45deg, #57bc90, #77c9d4);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 12px;
+    letter-spacing: 2px;
+    z-index: 1;
+    transition: all 0.15s ease;
+    opacity: 0; }
+  .postImg:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0;
+    transition: all 0.15s ease; }
+
+.postDate {
+  opacity: 0.8;
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 10px; }
+
+.navigation {
+  margin-top: 20px;
+  padding-left: 20px; }
+  .navigation li {
+    list-style: none;
+    display: inline-block; }
+    .navigation li a {
+      text-decoration: none;
+      padding: 5px;
+      margin-right: 5px;
+      opacity: 0.4;
+      color: #333; }
+  .navigation li.active a,
+  .navigation li a:hover,
+  .navigation li a:focus {
+    opacity: 1; }
+  .navigation li.active a {
+    color: #015249;
+    border-bottom: 2px solid #015249; }
+  .navigation ul > a {
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: #77c9d4;
+    font-weight: 400;
+    padding: 5px 10px;
+    opacity: 0.6; }
+    .navigation ul > a:hover, .navigation ul > a:focus {
+      color: #015249;
+      opacity: 1; }
+
+.blogBanner .devWrapper {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 10% 8%;
+  text-align: center; }
+  .blogBanner .devWrapper:after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.2; }
+
+.blogBanner h1,
+.blogBanner span {
+  position: relative;
+  z-index: 1; }
+
+.blogBanner h1 {
+  font-size: 34px;
+  letter-spacing: 0; }
+
+.blogBanner span {
+  display: inline-block;
+  color: white;
+  background: linear-gradient(-45deg, #57bc90, #77c9d4);
+  padding: 5px 15px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 15px; }
+
+.postContent h2,
+.postContent h3,
+.postContent h4,
+.postContent h5 {
+  padding: 20px 0 5px; }
+
+.postContent h2 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 30px; }
+
+.postContent h3 {
+  font-size: 26px; }
+
+.postContent h4 {
+  font-size: 22px; }
+
+.postContent h5 {
+  font-size: 20px; }
+
+.postContent p {
+  padding: 10px 0; }
+
+.postContent ul,
+.postContent ol {
+  padding: 2px 0 2px 20px; }
+
+.postContent a {
+  color: #77c9d4;
+  text-decoration: none; }
+  .postContent a:hover, .postContent a:focus {
+    color: #015249;
+    text-decoration: underline; }
+
+/*
+====================================
+End Blog Styling
+====================================
+*/
+/*
+====================================
+End Contact Styling
+====================================
+*/
+.contactSection .devWrapper {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: start;
+      align-items: flex-start; }
+
+.contactForm {
+  width: 45%; }
+  .contactForm h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 6%;
+    color: #015249; }
+  .contactForm form > p > label,
+  .contactForm .divider {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #015249; }
+
+.contactImgs {
+  width: 45%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 400px;
+  margin-top: 6%; }
+  .contactImgs div {
+    background-size: cover;
+    background-position: center;
+    height: calc(50% - 20px);
+    margin: 10px; }
+    .contactImgs div:nth-child(1) {
+      width: calc(100% - 20px); }
+    .contactImgs div:nth-child(2), .contactImgs div:nth-child(3) {
+      width: calc(50% - 20px); }
+
+/*
+====================================
+End Contact Styling
+====================================
+*/
+#map {
+  position: fixed;
+  background-image: url("http://rentofficespacetoronto.com/wp-content/uploads/2017/11/map-sample.png");
+  background-size: cover;
+  background-position: top;
+  height: calc(100vh - 100px);
+  width: 50vw;
+  top: 100px;
+  left: 0; }
+
+#idxblueContainer {
+  width: 45vw;
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: 120px;
+  padding-bottom: 30px;
+  height: calc(100vw - 150px);
+  overflow: auto; }
+
+.output_1_listingcontainer {
+  float: left;
+  width: calc(50% - 10px);
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  transition: all 0.15s ease; }
+  .output_1_listingcontainer:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+  .output_1_listingcontainer em {
+    display: none; }
+  .output_1_listingcontainer a {
+    text-decoration: none; }
+  .output_1_listingcontainer button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 20px 30px;
+    border-radius: 0;
+    border: 0;
+    font-weight: 400;
+    font-size: 14px;
+    color: white;
+    background: #57bc90;
+    text-transform: uppercase;
+    transition: all 0.15s ease;
+    text-decoration: none; }
+    .output_1_listingcontainer button:hover, .output_1_listingcontainer button:focus {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
+
+.output_1_listingcontainer_bootstrap_image {
+  height: 150px;
+  overflow: hidden; }
+  .output_1_listingcontainer_bootstrap_image img {
+    width: 100%;
+    margin: 0 !important;
+    float: none !important;
+    border-radius: 2px; }
+
+.output_1_listingcontainer_bootstrap_description {
+  text-align: center; }
+  .output_1_listingcontainer_bootstrap_description h3 {
+    color: #015249;
+    padding: 0 4%;
+    font-size: 22px;
+    margin-bottom: 10px; }
+    .output_1_listingcontainer_bootstrap_description h3:first-child {
+      color: #333;
+      font-size: 14px;
+      margin-bottom: 15px; }
+  .output_1_listingcontainer_bootstrap_description li {
+    list-style: none;
+    font-size: 14px;
+    background: #efefef;
+    padding: 5px; }
+
+h1,
+h2 {
+  font-family: "Pacifico", serif; }
+
+h3,
+h4,
+h5 {
+  font-family: "Open Sans", sans-serif; }
+
+p, li {
+  color: #333; }
+
+a {
+  transition: all 0.15s ease; }
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: white;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+  z-index: 5; }
+  header .devWrapper {
+    padding: 20px 3% 0; }
+  header .topBar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+        justify-content: flex-end;
+    -ms-flex-align: center;
+        align-items: center; }
+    header .topBar .headerPhone {
+      font-size: 14px;
+      padding-right: 20px; }
+      header .topBar .headerPhone a {
+        text-decoration: none;
+        color: #333; }
+    header .topBar span.menuSocial {
+      font-size: 16px;
+      letter-spacing: 2px;
+      text-align: center; }
+      header .topBar span.menuSocial a {
+        display: inline-block;
+        margin: 0 5px; }
+        header .topBar span.menuSocial a .fa {
+          position: relative;
+          font-size: 20px;
+          color: #333;
+          transition: all 0.15s ease;
+          opacity: 0.8; }
+        header .topBar span.menuSocial a:hover .fa, header .topBar span.menuSocial a:focus .fa {
+          color: #015249;
+          opacity: 1; }
+  header .hamburger {
+    display: none;
+    position: relative;
+    border: 0;
+    outline: none;
+    height: 22px;
+    width: 30px;
+    padding: 0;
+    background: transparent;
+    z-index: 7; }
+    header .hamburger span {
+      position: absolute;
+      width: 30px;
+      height: 2px;
+      background: #333;
+      right: 0;
+      transition: all 0.15s ease; }
+      header .hamburger span:nth-child(1) {
+        top: 0; }
+      header .hamburger span:nth-child(2) {
+        top: 10px; }
+      header .hamburger span:nth-child(3) {
+        top: 20px; }
+    header .hamburger.showMenu span:nth-child(1) {
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+      top: 10px; }
+    header .hamburger.showMenu span:nth-child(2) {
+      opacity: 0; }
+    header .hamburger.showMenu span:nth-child(3) {
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+      top: 10px; }
+  header .headerMenu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center; }
+    header .headerMenu .logo {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-decoration: none;
+      color: #333; }
+  header nav > span {
+    display: none; }
+  header nav li {
+    list-style: none; }
+    header nav li.itemHasChildren {
+      position: relative; }
+      header nav li.itemHasChildren a .fa {
+        display: none; }
+      header nav li.itemHasChildren:hover .subMenu {
+        opacity: 1;
+        visibility: visible;
+        top: 100%; }
+  header nav .backSubMenu {
+    display: none; }
+  header nav > ul > li {
+    display: inline-block; }
+    header nav > ul > li > a {
+      display: block;
+      padding: 15px 15px 20px;
+      border-bottom: 2px solid white; }
+      header nav > ul > li > a:hover, header nav > ul > li > a:focus {
+        border-bottom: 2px solid #015249; }
+  header nav .subMenu {
+    position: absolute;
+    background: white;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    top: -50%;
+    transition: all 0.15s ease; }
+    header nav .subMenu li a {
+      display: block;
+      padding: 2px 15px; }
+      header nav .subMenu li a:hover, header nav .subMenu li a:focus {
+        background: #015249;
+        color: white; }
+  header nav a {
+    color: #333;
+    text-decoration: none; }
 
 footer {
   border-top: 1px solid rgba(0, 0, 0, 0.1); }
@@ -627,12 +951,17 @@ footer {
   footer .leftFooter a {
     display: block;
     margin-bottom: 10px; }
+  footer .leftFooter .footerSocial a {
+    display: inline-block;
+    font-size: 22px;
+    margin-right: 5px; }
   footer h3 {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 14px;
     font-weight: 400;
     color: #015249;
+    font-family: "Open Sans", sans-serif;
     margin: 30px 0 20px; }
   footer ul {
     display: -ms-flexbox;
@@ -671,9 +1000,109 @@ footer {
     width: 300px;
     height: 300px; }
   .homeSocialDetails {
-    width: calc(90% - 300px); } }
+    width: calc(90% - 300px); }
+  .blogPost {
+    width: calc(50% - 40px); } }
 
 @media screen and (max-width: 767px) {
+  header .hamburger {
+    display: block; }
+  header .topBar {
+    display: none; }
+  header .devWrapper {
+    padding-bottom: 20px; }
+  header nav .backSubMenu, header nav li.itemHasChildren a .fa, header nav > span {
+    display: block; }
+  header nav {
+    position: fixed;
+    background: white;
+    height: 100vh;
+    width: 90%;
+    max-width: 350px;
+    top: 0;
+    right: -100%;
+    padding: 80px 20px 20px;
+    box-shadow: -10px 0 25px rgba(0, 0, 0, 0.05);
+    z-index: 6;
+    transition: all 0.35s ease; }
+    header nav.showMenu {
+      right: 0; }
+    header nav > span {
+      position: absolute;
+      top: 15px;
+      width: calc(100% - 40px);
+      display: block;
+      font-size: 30px;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: #015249;
+      border-bottom: 2px solid #015249;
+      padding-bottom: 10px; }
+    header nav li.itemHasChildren:hover .subMenu {
+      top: 80px; }
+    header nav li.itemHasChildren > a > .fa {
+      top: 15px; }
+    header nav ul.subMenu {
+      position: fixed;
+      height: calc(100% - 100px);
+      width: 90%;
+      max-width: 350px;
+      top: 80px;
+      right: -100%;
+      background: white;
+      z-index: 7;
+      overflow: auto;
+      transition: all 0.15s ease; }
+      header nav ul.subMenu a {
+        font-size: 16px;
+        padding: 5px 20px;
+        border-bottom: 2px solid white; }
+        header nav ul.subMenu a .fa {
+          position: relative;
+          font-size: 16px;
+          color: inherit;
+          padding-right: 10px; }
+      header nav ul.subMenu.showSubMenu {
+        right: 0;
+        opacity: 1;
+        visibility: visible; }
+    header nav .backSubMenu {
+      display: block; }
+    header nav > ul > li {
+      display: block;
+      list-style: none;
+      margin: 5px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+      header nav > ul > li:last-child {
+        border-bottom: 0; }
+      header nav > ul > li a:hover,
+      header nav > ul > li a:focus {
+        border-bottom: 2px solid white; }
+    header nav li.backSubMenu {
+      border-bottom: 0; }
+      header nav li.backSubMenu a {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #57bc90; }
+        header nav li.backSubMenu a .fa {
+          display: inline;
+          top: 0; }
+    header nav a {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: #333;
+      padding: 10px 0;
+      font-size: 18px;
+      outline: none; }
+      header nav a:hover, header nav a:focus {
+        color: #57bc90; }
+      header nav a .fa {
+        position: absolute;
+        right: 0;
+        font-size: 30px;
+        color: #57bc90; }
   .banner .devWrapper {
     display: block;
     height: auto; }
@@ -708,7 +1137,31 @@ footer {
     display: block; }
   footer .leftFooter,
   footer .rightFooter {
-    width: 100%; } }
+    width: 100%; }
+  .blogPost,
+  .blogPost:nth-child(1) {
+    width: 100%; }
+    .blogPost .postImg,
+    .blogPost:nth-child(1) .postImg {
+      height: 150px; }
+  .contactSection .devWrapper {
+    -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse; }
+  .contactForm,
+  .contactImgs {
+    width: 100%; }
+  .contactImgs {
+    margin: 0 0 6%;
+    max-height: 40vh; }
+  #map {
+    display: none; }
+  #idxblueContainer {
+    width: 100%;
+    height: auto; }
+  .output_1_listingcontainer {
+    width: calc(100% / 3 - 10px); }
+  .output_1_listingcontainer_bootstrap_image {
+    height: 100px; } }
 
 @media screen and (max-width: 500px) {
   html,
@@ -716,11 +1169,11 @@ footer {
     margin: 0 5px; }
   header .devWrapper > a {
     display: none; }
-  .leftBanner h1 {
+  .banner .devWrapper h1 {
     font-size: 36px; }
-  .rightBanner h2 {
+  .banner .devWrapper h2 {
     font-size: 30px; }
-  .rightBanner .select {
+  .banner .devWrapper .select {
     width: calc(100% - 10px); }
   .homeContact h2,
   .homeNeighbourhoods h2,
@@ -731,4 +1184,10 @@ footer {
     .neighbourhoodSingle figure,
     .neighbourhoodSingle img {
       width: 100px;
-      height: 100px; } }
+      height: 100px; }
+  .output_1_listingcontainer {
+    width: calc(50% - 10px); }
+  .output_1_listingcontainer_bootstrap_description h3 {
+    font-size: 18px; }
+    .output_1_listingcontainer_bootstrap_description h3:first-child {
+      font-size: 12px; } }
